@@ -3,29 +3,43 @@
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="A mastery-based course in pediatric oxygenation and ventilation for nurses and medical learners.">
+  <meta name="theme-color" content="#071f2d">
   <title>Vikkypaedia OxyVent Module</title>
-  <link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css?v=20260911">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to course content</a>
 <div class="app">
   <header class="topbar">
-    <button class="mobile-menu" id="menuBtn" aria-label="Open course navigation">☰</button>
-    <div class="brand"><span class="brand-mark">O₂</span><div>Vikkypaedia<small>OxyVent Module</small></div></div>
-    <div class="top-progress"><span id="progressText">0 of 12 units</span><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div></div>
+    <button class="mobile-menu" id="menuBtn" aria-label="Open course navigation" aria-controls="sidebar" aria-expanded="false"><span></span><span></span><span></span></button>
+    <button class="brand" onclick="showHome()" aria-label="Go to course home">
+      <span class="brand-mark" aria-hidden="true"><b>O</b><sub>2</sub></span>
+      <span class="brand-copy"><strong>Vikkypaedia</strong><small>OxyVent mastery</small></span>
+    </button>
+    <div class="topbar-label"><span></span>Pediatric respiratory learning</div>
+    <div class="top-progress">
+      <span id="progressText">0 of 12 units</span>
+      <div class="progress-track" role="progressbar" aria-label="Course progress" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0"><div class="progress-fill" id="progressFill"></div></div>
+    </div>
   </header>
   <div class="shell">
     <aside class="sidebar" id="sidebar">
-      <p class="path-label">Your learning path</p>
-      <select class="role-select" id="roleSelect" aria-label="Select learner role">
+      <div class="sidebar-head">
+        <div><p class="path-label">Your learning path</p><p class="path-subtitle">12 units · mastery at your pace</p></div>
+        <button class="sidebar-close" id="sidebarClose" aria-label="Close course navigation">×</button>
+      </div>
+      <label class="role-label" for="roleSelect">Learning as</label>
+      <div class="role-control"><span aria-hidden="true">◎</span><select class="role-select" id="roleSelect" aria-label="Select learner role">
         <option value="ug">Undergraduate student</option><option value="nurse">Ward / emergency nurse</option><option value="picu">PICU nurse</option><option value="pg">Postgraduate student</option>
-      </select>
+      </select></div>
       <nav class="unit-list" id="unitList" aria-label="Course units"></nav>
-      <div class="sidebar-foot"><strong>Mastery standard</strong><br>Score 90% in each unit. Missed concepts open a focused remediation card before your next attempt.</div>
+      <div class="sidebar-foot"><span class="shield" aria-hidden="true">✓</span><div><strong>Mastery standard</strong><p>9/10 in each unit with no safety-critical errors.</p></div></div>
     </aside>
+    <button class="sidebar-scrim" id="sidebarScrim" aria-label="Close course navigation"></button>
     <main class="main" id="main"></main>
   </div>
 </div>
-<script src="questions.js"></script>
-<script src="app.js"></script>
+<script src="questions.js?v=20260911"></script>
+<script src="app.js?v=20260911"></script>
 </body>
 </html>
