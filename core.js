@@ -6,7 +6,7 @@
   const ROLES = ['ug', 'nurse', 'picu', 'pg'];
   const DEPTHS = ['must', 'good', 'nice'];
   const object = v => v && typeof v === 'object' && !Array.isArray(v);
-  const fresh = () => ({ version: VERSION, role: 'ug', depth: 'must', attempts: {}, active: {}, checks: {}, notes: {}, baseline: {}, cases: {}, legacy: null });
+  const fresh = () => ({ version: VERSION, role: 'ug', depth: 'must', attempts: {}, active: {}, checks: {}, notes: {}, baseline: {}, cases: {}, legacy: null, learnerName: '' });
   const shuffle = (items, random = Math.random) => {
     const out = [...items];
     for (let i = out.length - 1; i > 0; i--) { const j = Math.floor(random() * (i + 1)); [out[i], out[j]] = [out[j], out[i]]; }
@@ -21,6 +21,7 @@
   function validateState(input, course) {
     const s = fresh();
     if (!object(input) || input.version !== VERSION) return s;
+    if (typeof input.learnerName === 'string') s.learnerName = input.learnerName.slice(0,80);
     if (ROLES.includes(input.role)) s.role = input.role;
     if (DEPTHS.includes(input.depth)) s.depth = input.depth;
     for (const unit of course.units) {
@@ -105,6 +106,7 @@
     }
     a.feedback = false; return 'next';
   }
-  root.OxyCore = { VERSION, KEY, ROLES, DEPTHS, fresh, shuffle, load, save, validateState, summarize, history, latest, mastered, unlocked, complete, start, submit, advance, allQuestions };
+  const certificateEligible = (state, course) => course.units.length > 0 && course.units.every(unit => mastered(state, unit));
+  root.OxyCore = { certificateEligible, VERSION, KEY, ROLES, DEPTHS, fresh, shuffle, load, save, validateState, summarize, history, latest, mastered, unlocked, complete, start, submit, advance, allQuestions };
   if (typeof module !== 'undefined') module.exports = root.OxyCore;
 })(typeof window !== 'undefined' ? window : globalThis);

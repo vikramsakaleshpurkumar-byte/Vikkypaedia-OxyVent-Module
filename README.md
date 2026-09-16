@@ -30,3 +30,9 @@ Tests cover score/safety rules, immutable first attempts, alternating forms, pre
 ## Progress and accessibility
 
 Progress stays in browser storage; file and online contexts may use separate storage. Legacy results are archived rather than credited against the revised question bank. Export a record before clearing browser data. The interface includes labelled controls, keyboard navigation, a focus-managed mobile drawer, reduced-motion support and print styles. Full assistive-technology testing remains part of the learner pilot.
+
+## Completion certificate
+
+The Certificate page is always visible and offers a clearly marked preview. All twelve current unit results must meet the score and safety standard to unlock a named completion certificate. Print / Save PDF uses the browser print dialog; Download SVG saves a scalable standalone certificate. It records self-directed educational completion, not accreditation or observed clinical competence. Names remain local.
+
+The reference library filters by unit and links back to related teaching. Lesson checkpoints show core explain-back progress.

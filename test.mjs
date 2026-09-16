@@ -31,3 +31,5 @@ for (const role of K.ROLES) {
   assert.equal(K.unlocked(s,C,C.units.at(-1)),false,'failed prerequisite relocks later assessments');
 }
 console.log('PASS: complete twelve-unit journey, both forms, all four roles, round-trip persistence and prerequisite regression.');
+
+s=K.fresh();assert.equal(K.certificateEligible(s,C),false);for(const unit of C.units)finish(s,unit);assert.equal(K.certificateEligible(s,C),true);s.learnerName='Test Learner';assert.equal(K.validateState(s,C).learnerName,'Test Learner');const retryCertificate=K.start(s,C,u);const criticalCertificate=retryCertificate.order.findIndex(id=>K.allQuestions(C).find(q=>q.id===id).critical);finish(s,u,criticalCertificate);assert.equal(K.certificateEligible(s,C),false);console.log('PASS: certificate unlock, persistence and failed-reassessment lock.');
