@@ -1,0 +1,12 @@
+{
+  "name": "vikkypaedia-oxyvent",
+  "version": "2026.9.16",
+  "private": true,
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node test.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

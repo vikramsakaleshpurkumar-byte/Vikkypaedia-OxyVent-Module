@@ -1,0 +1,13 @@
+{
+  "version": "2026.09.16",
+  "counts": {
+    "units": 12,
+    "sections": 81,
+    "assessmentItems": 240,
+    "baseline": 3,
+    "caseDecisions": 9,
+    "sources": 9
+  },
+  "validation": "passed",
+  "offline": "Generated from exact current shell, styles, data and engine"
+}
