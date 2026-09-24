@@ -1,0 +1,51 @@
+<script>
+/* Module configuration — the only engine-facing file that changes between Vikkypaedia modules. */
+window.VKP_MODULE = {
+  id: "oxyvent",
+  slug: "oxyvent",
+  title: "OxyVent: Oxygen and Ventilation",
+  version: "4.0.0",
+  build: "2026-09-24",
+  storeKey: "vkp.oxyvent.v4",
+  legacyKeys: ["vikkypaedia-oxyvent-v3"],
+  codePrefix: "OV26",
+  safetyGate: true,          // an exam attempt with any safety-critical miss does not count
+  parts: [
+    { key:"A", units:[1,2,3] },
+    { key:"B", units:[4,5,6,7] },
+    { key:"C", units:[8,9,10,11] },
+    { key:"D", units:[12,13,14,15,16] },
+    { key:"E", units:[17,18,19,20] }
+  ],
+  defaults: {
+    cut: 80,            // per cent — PROVISIONAL, set by faculty using Appendix C before consequential use
+    items: 50,
+    minutes: 75,
+    attempts: 2,
+    lockHours: 24,
+    retainUnits: 15     // of 20 units must show ≥24 h retention (75%)
+  },
+  alignedTo: "aligned to WHO oxygen therapy guidance, PALICC-2, AHA/AAP PALS 2025 and current bronchiolitis, pneumonia and asthma guidelines",
+  certScopeLines: [
+    "This certificate attests knowledge and clinical reasoning demonstrated by written assessment in a self-paced module. It does not attest bedside",
+    "competence in bag-mask ventilation, non-invasive support, airway management or mechanical ventilation, confers no licence or clinical privilege,",
+    "and is not a substitute for supervised, hands-on training. It confers no provider status in any named course and is not endorsed by WHO, AHA or AAP.",
+    "No CME credit unless separately accredited. The verification code is deterministically re-derivable from the displayed figures — it is not tamper-proof."
+  ],
+  recordNote: "Not a named provider course. Confers no procedural competence, provider status, licence or clinical privilege.",
+  scopes: {
+    e: { label:"Parts A–C · 11 units", hours:12 },
+    a: { label:"Parts A–D · 16 units", hours:20 },
+    x: { label:"All 20 units + appendices", hours:26 }
+  },
+  placement: {
+    paths: {
+      many: "You support breathing children routinely, so <b>clear Parts A and B by challenge</b>: open each unit, go straight to the two checkpoint questions and answer them cold. Pass both and the unit is mastered; miss one and read the unit &mdash; that miss is the gap worth finding.",
+      some: "Read Part A quickly, then slow down in <b>Part C</b>. High-flow and bubble CPAP are where the evidence has moved most in the last few years, and where partly-experienced staff most often carry a habit the trials no longer support.",
+      none: "Work through in order and do not rush Parts A and B &mdash; the difference between oxygenation and ventilation is what every later unit hangs on. Aim for <b>one unit per sitting</b>."
+    },
+    trackRc: "Your clinical panels now default to the <b>resource-constrained track</b> &mdash; concentrators and cylinders, bubble CPAP, no ventilator on site, transfer by road. Switch to &lsquo;Both tracks&rsquo; whenever you want to compare with an intensive-care setting.",
+    trackIdeal: "Your clinical panels default to the <b>ideal-setting track</b>. Read the resource-constrained panels at least once: you will refer to, receive from or teach in those settings."
+  }
+};
+</script>

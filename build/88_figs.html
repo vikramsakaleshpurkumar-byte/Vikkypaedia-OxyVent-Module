@@ -1,0 +1,37 @@
+<script>
+/* ------------------------------------------------------------------
+   Figure specs. Rendered to inline SVG by figSVG() in the engine.
+   Kinds: band | ask | step | good | warn | crit | note
+   A node with side:1 hangs off node `from` in the right column.
+   `edge` labels the arrow that arrives at the node.
+   ------------------------------------------------------------------ */
+var FIGS = {
+
+"ladder": {
+  w: 780, main: 450, side: 290,
+  nodes: [
+    {id:"threat", k:"band", t:"NAME THE THREAT FIRST", l:["Oxygenation, ventilation, or both?"]},
+    {id:"o2", k:"step", t:"Low-flow oxygen (prongs, mask)", l:["Titrate to a written SpO₂ target","Reassess in 15–60 minutes"]},
+    {id:"q1", k:"ask", edge:"target not met, or work rising", t:"Rising work of breathing or oxygen need?"},
+    {id:"ni", k:"warn", t:"Bubble CPAP or high-flow", l:["Trained monitoring and a written failure plan","Success: heart rate and respiratory rate fall in 1–2 h"]},
+    {id:"niv", k:"note", side:1, from:"ni", t:"NIV only if the airway is protected", l:["Alert, cooperative, not vomiting","Close observation"]},
+    {id:"fail", k:"ask", edge:"no improvement", t:"Drowsy, apnoea, rising CO₂, shock?"},
+    {id:"tube", k:"crit", edge:"YES", t:"Intubate and ventilate", l:["Resuscitate before induction","Lung-protective settings · DOPES ready"]}
+  ]
+},
+
+"dopes": {
+  w: 780, main: 450, side: 290,
+  nodes: [
+    {id:"ev", k:"band", t:"VENTILATED CHILD SUDDENLY WORSE · CALL FOR HELP"},
+    {id:"bag", k:"crit", t:"Disconnect and hand-ventilate with oxygen", l:["Watch chest rise · feel resistance","Slow rate if obstructive disease"]},
+    {id:"d", k:"ask", t:"D · Displacement?", l:["EtCO₂ waveform lost · depth mark moved","One-sided air entry (too deep)"]},
+    {id:"o", k:"ask", t:"O · Obstruction?", l:["Suction catheter will not pass","Kink · biting · secretions"]},
+    {id:"p", k:"warn", t:"P · Pneumothorax?", l:["Asymmetric chest · rising pressures · shock","Clinical diagnosis in a collapsing child"]},
+    {id:"e", k:"step", t:"E · Equipment?", l:["Gas source · connections · circuit · ventilator","Better when hand-bagged → suspect the machine"]},
+    {id:"s", k:"step", t:"S · Stacked breaths?", l:["Breath in before breath out","Disconnect briefly · then ventilate slower"]}
+  ]
+}
+
+};
+</script>
