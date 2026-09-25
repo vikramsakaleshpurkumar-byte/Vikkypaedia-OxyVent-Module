@@ -4,7 +4,7 @@
   "module": {
     "id": "oxyvent",
     "title": "OxyVent: Oxygen and Ventilation",
-    "version": "4.0.1",
+    "version": "4.0.2",
     "build": "2026-09-24"
   },
   "learner": {
@@ -15,8 +15,8 @@
     "track": "Advanced",
     "setting": "rc"
   },
-  "enrolledAt": 1790264067817,
-  "issuedAt": 1790264072735,
+  "enrolledAt": 1790267198273,
+  "issuedAt": 1790267205788,
   "result": {
     "unitsMastered": 20,
     "unitsTotal": 20,
@@ -34,10 +34,10 @@
     "name": "Dr Vikram Sakaleshpur Kumar",
     "role": "Medical Educator"
   },
-  "verificationCode": "OV26-0437-AY3",
+  "verificationCode": "OV26-04D6-WN2",
   "attestation": "Self-attested. Generated on the learner's own device from local progress data. Re-derivable, not tamper-proof: treat it as a signed statement by the learner, not as proof issued by a third party.",
   "scope": "Not a named provider course. Confers no procedural competence, provider status, licence or clinical privilege.",
-  "checksum": "0S11B9Q",
+  "checksum": "1HWR32C",
   "detail": {
     "units": [
       {
@@ -337,7 +337,7 @@
     },
     "exam": [
       {
-        "at": 1790264071473,
+        "at": 1790267204086,
         "pct": 96,
         "n": 50,
         "timedOut": false,
@@ -345,7 +345,8 @@
         "miss": {}
       }
     ],
-    "studyDays": 0
+    "studyDays": 0,
+    "megacodes": null
   },
-  "detailChecksum": "0TXCILQ"
+  "detailChecksum": "0B8UBJC"
 }
